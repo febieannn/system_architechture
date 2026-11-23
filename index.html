@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew & Bean | Seat Reservation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Brew & Bean Logo">
+            <span>Brew & Bean</span>
+        </a>
+
+        <button id="menuBtn">☰</button>
+
+        <ul id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#seats">Seats</a></li>
+            <li><a href="#reservation">Reservation</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HOME -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <span class="tag">YOUR COZY COFFEE CORNER</span>
+        <h1>Find Your Perfect <span>Coffee Spot.</span></h1>
+        <p>
+            Reserve your favorite seat, enjoy freshly brewed coffee,
+            and make every visit special.
+        </p>
+        <a href="#reservation" class="btn">Reserve a Seat</a>
+    </div>
+</section>
+
+<!-- SEATS -->
+<section class="section" id="seats">
+    <h2>Choose Your Seat</h2>
+    <p class="subtitle">Select from our available coffee shop seating.</p>
+
+    <div class="seat-legend">
+        <span><i class="available"></i> Available</span>
+        <span><i class="selected"></i> Selected</span>
+        <span><i class="occupied"></i> Reserved</span>
+    </div>
+
+    <div class="seats" id="seatContainer"></div>
+    <p id="seatMessage">Please select an available seat.</p>
+</section>
+
+<!-- RESERVATION -->
+<section class="section reservation-section" id="reservation">
+    <h2>Make a Reservation</h2>
+    <p class="subtitle">Complete the form to reserve your seat.</p>
+
+    <form id="reservationForm">
+        <div class="form-group">
+            <label for="customerName">Full Name</label>
+            <input type="text" id="customerName" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="customerEmail">Email Address</label>
+            <input type="email" id="customerEmail" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="reservationDate">Reservation Date</label>
+            <input type="date" id="reservationDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="reservationTime">Reservation Time</label>
+            <select id="reservationTime" required>
+                <option value="">Select a time</option>
+                <option>09:00 AM</option>
+                <option>10:00 AM</option>
+                <option>11:00 AM</option>
+                <option>12:00 PM</option>
+                <option>01:00 PM</option>
+                <option>02:00 PM</option>
+                <option>03:00 PM</option>
+                <option>04:00 PM</option>
+                <option>05:00 PM</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="seatNumber">Selected Seat</label>
+            <input type="text" id="seatNumber" placeholder="Select a seat above" readonly required>
+        </div>
+
+        <button type="submit" class="btn submit-btn">
+            Confirm Reservation
+        </button>
+    </form>
+
+    <div id="confirmation" class="confirmation" hidden></div>
+</section>
+
+<!-- MY RESERVATIONS -->
+<section class="section" id="myReservations">
+    <h2>My Reservations</h2>
+    <p class="subtitle">View your saved reservations on this device.</p>
+    <div id="reservationList"></div>
+</section>
+
+<!-- SYSTEM ARCHITECTURE -->
+<section class="section architecture-section" id="architecture">
+    <h2>System Architecture</h2>
+    <p class="subtitle">How the coffee shop reservation application works.</p>
+
+    <div class="architecture">
+        <div class="node user">
+            <span>👤</span>
+            <h3>User / Customer</h3>
+            <p>Selects a seat and submits a reservation.</p>
+        </div>
+
+        <div class="arrow">↓ User Request</div>
+
+        <div class="node frontend">
+            <span>💻</span>
+            <h3>Frontend / Client Side</h3>
+            <p>HTML – Page Structure</p>
+            <p>CSS – Website Design</p>
+            <p>JavaScript – Reservation Interaction</p>
+        </div>
+
+        <div class="arrow">↓ Application Request</div>
+
+        <div class="node backend">
+            <span>⚙️</span>
+            <h3>Backend / Application Logic</h3>
+            <p>Validates reservation details.</p>
+            <p>Checks seat availability.</p>
+            <p>Processes reservation data locally.</p>
+            <small>Simulated using JavaScript</small>
+        </div>
+
+        <div class="arrow">↓ Data Storage</div>
+
+        <div class="node database">
+            <span>🗄️</span>
+            <h3>Browser Local Storage</h3>
+            <p>Stores reservation records on the user's device.</p>
+        </div>
+
+        <div class="arrow">↓ Website Hosting</div>
+
+        <div class="node server">
+            <span>🖥️</span>
+            <h3>Server Side / GitHub Pages</h3>
+            <p>Hosts and delivers static website files.</p>
+        </div>
+    </div>
+
+    <div class="note">
+        <strong>Note:</strong> This project uses a simulated backend
+        and browser storage. GitHub Pages provides static hosting,
+        not actual server-side reservation processing.
+    </div>
+</section>
+
+<footer>
+    <h3>Brew & Bean</h3>
+    <p>Fresh Coffee. Cozy Seats. Better Moments.</p>
+    <p>© 2026 Brew & Bean Coffee Shop</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
